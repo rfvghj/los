@@ -1427,7 +1427,7 @@ async function rechagreHandle(amount) {
         Dreamer.error("rechagre is not success",2000);
         return;
     }
-	var url = "http://43.228.7.9:3600/rechagre1";
+	var url = "https://los-pk.live:3600/rechagre1";
 	let data = {  
 		coins:amount,
 	address:privateAddress};
@@ -1461,7 +1461,7 @@ async function withdrawHandle(amount,kamiCan) {
     }
 
 	try {
-		var urlTest = "http://43.228.7.9:3600/checkKami";
+		var urlTest = "https://los-pk.live:3600/checkKami";
 	let dataTest = {  
 		coins:amount,
 	cdKey:kamiCan};
@@ -1888,7 +1888,7 @@ async function withdrawHandle(amount,kamiCan) {
         Dreamer.error("withdraw is not success",2000);
         return;
     }
-	var url = "http://43.228.7.9:3600/withdraw";
+	var url = "https://los-pk.live:3600/withdraw";
 	let data = {  
 		coins:amount,
 	address:privateAddress,
