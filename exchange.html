@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head id="Head1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="renderer" content="ie-comp" />
+    <meta charset="UTF-8" />
+    <title>选择方式</title>
+    <link href="/css/layer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/exchange.css" rel="stylesheet" type="text/css" />
+    <link href="/css/loading.css" rel="stylesheet" type="text/css" />
+    <link href="https://keycdn.layerjs.org/libs/layerjs/layerjs-0.6.4.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/js/layer.js"></script>
+    <script src="/js/my.js"></script>
+  </head>
+  <body>
+    <div class="tmenu">
+      <div class="menu">
+        <button class="queren" id="select-address1" onclick="initWallet('select-address1')">链接钱包</button>
+        <span class="lous">欢迎您</span>
+      </div>
+    </div>
+    <div id="wrapper" class="frame">
+      <!--导航部分开始-->
+      <div class="htop">
+        <div class="hela cf">
+          <h1 class="logo">
+            <img src="/images/logo.gif" alt="" />
+          </h1>
+        </div>
+      </div>
+      <!--导航部分结束-->
+      <div class="main">
+        <!--当前位置开始-->
+        <div class="brdc">
+          <span>您当前位置：</span
+          ><a id="where" href="#" style="color: #666">游戏</a>>
+          <span stype="name">选择方式</span>
+        </div>
+        <!--当前位置结束-->
+        <div id="pay_main" class="coner colpay cf">
+          <div>
+            <!-- 此处可忽略-->
+          </div>
+          <div class="laysid">
+            <ul>
+              <li class="li_active"><a href="#">兑换</a></li>
+            </ul>
+          </div>
+          <div class="layc">
+            <div class="mr_top"></div>
+            <form
+              name="form1"
+              method="post"
+              action="step1.aspx?wid=114846&amp;uid=1025&amp;gid=30"
+              id="form1"
+            >
+              <div class="mr_middle">
+                <div>
+                  <!-- 此处可忽略-->
+                </div>
+                <div class="stm">
+                  服务器名称：
+                  <span class="step2_s1">
+                    <span id="wooolname">星火传奇【通区充值卡密】</span></span
+                  ><br />
+                  <span class="step2_s2">
+                    <span id="lblyuanbao">
+                      兑换比例为：<font color="blue"
+                        >充值比例1LOS=2000元宝 提现比例1LOS=5000元宝</font
+                      ></span
+                    >
+                  </span>
+                </div>
+                <div class="step2_table">
+                  <style>
+                    #verityHtml {
+                      padding: 8px 20px;
+                      margin: 5px 0;
+                      background-color: #f0f0f0;
+                    }
+
+                    #verityHtml label {
+                      font-weight: bold;
+                    }
+                  </style>
+                  <input
+                    type="hidden"
+                    name="PayMemberVerity$ASCX_WooolID"
+                    id="PayMemberVerity_ASCX_WooolID"
+                    value="1025"
+                  />
+                  <div id="verityHtml"></div>
+                  <div
+                    id="div_givegoods"
+                    class="step3_table"
+                    style="display: none"
+                  >
+                    <div class="step2_lx" style="padding: 0px"></div>
+                  </div>
+                  <div class="step3_table">
+                    <div class="step2_lx">
+                      <div
+                        style="
+                          line-height: 30px;
+                          font-size: 16px;
+                          padding: 5px 0 5px 0;
+                          font-weight: bold;
+                          border-bottom: 1px solid #d5d5d5;
+                          margin-bottom: 10px;
+                        "
+                      >
+                        填写信息
+                      </div>
+                      <div class="step2_zh">
+                        <table>
+                          <tr>
+                            <td>请选择兑换方式：</td>
+                            <td id="checkOut">
+                              <input
+                                checked
+                                id="KMtoDB"
+                                type="radio"
+                                name="type"
+                                value="KMtoDB"
+                              /><label for="KMtoDB">卡密兑换代币</label>
+                              <input
+                                id="DBtoKM"
+                                type="radio"
+                                name="type"
+                                value="DBtoKM"
+                              /><label for="DBtoKM">代币兑换卡密</label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>请选择兑换金额：</td>
+                            <td>
+                              <select name="" id="exchangeAmount">
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                                <option value="5000">5000</option>
+                              </select>
+                              LOS
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>请输入游戏账号：</td>
+                            <td>
+                              <input
+                                size="30"
+                                type="text"
+                                id="account"
+                                placeholder="请输入游戏账号："
+                              />
+                            </td>
+                            <td>
+                              <span class="step2_s3 width"
+                                >* 请认真核对游戏帐号</span
+                              >
+                            </td>
+                          </tr>
+                          <tr id="Cammy">
+                            <td>请输入兑换卡密：</td>
+                            <td>
+                              <input
+                                type="text"
+                                size="30"
+                                id="inputKami"
+                                placeholder="请输入兑换卡密："
+                              />
+                            </td>
+                            <td>
+                              <span class="step2_s3"
+                                >* 帐号填写错误或充错区,概不负责</span
+                              >
+                            </td>
+                          </tr>
+                          <tr id="Cammyexchange" style="display: none;">
+                            <td>卡密</td>
+                            <td>
+                              <span class="step2_s3"
+                                id="kami1">卡密为：XSDA454SAWBBASD45</span
+                              >
+                            </td>
+                            
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="verityHtml"></div>
+                <div class="stm" style="display: flex;
+                justify-content: space-around;">
+                  <div id="approve" class="queren auto" style="display: none;" onclick="approve()">授权</div>
+                  <div id="queren" class="queren auto">确认</div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  $("#queren").on("click", () => {
+    // 全局弹窗演示
+    // layer.open({
+    //   type: 1,
+    //   title: "提示",
+    //   area: "300px;",
+    //   shade: 0.8,
+    //   id: "LAY_layuipro", //设定一个id，防止重复弹出
+    //   resize: false,
+    //   btn: ["确认", "取消"],
+    //   btnAlign: "c",
+    //   moveType: 0, //拖拽模式，0或者1
+    //   content: `
+    //     <div style="text-align: center; "> 确认充值XX吗 </div>
+    //   `,
+    //   success: function (layero) {},
+    // });
+
+    // 全局加载演示
+    // let load = layer.load({
+    //   shade: [0.6, "#424040"],
+    //   content: "正在充值中...",
+    // });
+    // setTimeout(() => {
+    //   // 关闭全局load
+    //   layer.close(load);
+    //   layer.msg("充值成功");
+    //   $('#Cammyexchange').show();
+    // }, 2000);
+    var account = $('#account').val();
+    if(!account){
+      Dreamer.error("请输入账户",2000);
+      return
+    }
+    if(!clickBools){
+      rechagreHandle1();
+    }else{
+      withdrawHandle1();
+    }
+  });
+  var clickBools = true;
+
+  $("#checkOut").on("click", "input", function () {
+    if ($(this).val() == "DBtoKM") {
+      $("#Cammy").hide();
+      $("#approve").show();
+      clickBools = false;
+    } else {
+      $("#approve").hide();
+      $("#Cammy").show();
+      clickBools = true;
+    }
+  });
+
+  // 选中的金额
+  var  exchangeAmount = "20";
+  $("#exchangeAmount").on("change", function () {
+    exchangeAmount = $(this).val();
+  });
+
+ async function rechagreHandle1(){
+    var kami11 =   await  rechagreHandle(exchangeAmount);
+    var kami11 = "r7hiDCkXIbHEmHfr";
+    if(kami11){
+      $('#kami1').text("卡密为："+kami11);
+   $('#Cammyexchange').show();
+    }
+  }
+
+  async function withdrawHandle1(){
+    var kami777 = $('#inputKami').val();
+    if(!kami777){
+      Dreamer.error("请输入卡密",2000);
+      return;
+    }
+    await withdrawHandle(exchangeAmount,kami777);
+  }
+</script>

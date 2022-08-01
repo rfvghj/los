@@ -1,0 +1,18 @@
+body {
+    color: #000;
+    background: #e2d8ce;
+    font: 12px/20px 'Microsoft YaHei', arial, sans-serif;
+    min-width: 1200px;
+    font-size: 20px;
+}
+/*原文件配置*/
+.w1280 {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.w1280 img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
