@@ -1858,6 +1858,7 @@ input.selected {
 }
 
 .menu {
+    height: 40px;
     font-size: 12px;
     margin: 0 auto;
     position: relative;
@@ -4460,7 +4461,8 @@ step22_table {
     padding-bottom: 10px;
 }
 .queren{
-    width: 145px;
+    height: 40px;
+    width: 165px;
     border: none;
     padding: 10px 40px;
     color: #fff;

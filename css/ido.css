@@ -1,0 +1,178 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(226, 216, 206);
+    min-width: 1200px;
+}
+
+main {
+    width: 1200px;
+    margin: 50px auto;
+}
+
+.w1200 {
+    width: 1200px;
+}
+
+.tmenu {
+    background: none repeat scroll 0 0 #424040;
+    color: #fff;
+    display: block;
+    height: 40px;
+    line-height: 23px;
+    width: 100%;
+}
+
+.menu {
+    font-size: 12px;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    text-align: right;
+    width: 990px;
+    z-index: 0;
+}
+
+.tmenu font {
+    color: #d5d5d5;
+}
+
+.menu .txt_left {
+    left: 0;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    width: 300px;
+}
+
+.tmenu a:link, .tmenu a:visited, .copyright a:link, .copyright a:visited {
+    color: #bbb9b9;
+    padding: 0 3px;
+}
+.queren{
+    height: 40px;
+    width: 165px;
+    border: none;
+    /* padding: 10px 40px; */
+    color: #fff;
+    background: linear-gradient(to bottom, rgb(238,101,34), rgb(199,50,12));
+    text-align: center;
+}
+.lous {
+    color: #eaeaea;
+}
+
+main .info {
+    box-sizing: border-box;
+    margin-top: 50xp;
+    padding: 20px;
+    background-color: #312926;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+main .info .info-card {
+    box-sizing: border-box;
+    height: auto;
+    padding: 20px 0;
+    border-bottom: 1px solid #434343;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .info .info-card span:first-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.w700 {
+    width: 700px;
+}
+
+.w400 {
+    width: 400px;
+}
+
+main>.progressBar {
+    display: flex;
+    margin: 50px auto;
+    justify-content: space-between;
+}
+
+.timeBox {
+    width: 40%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.timeBox>div {
+    width: 60px;
+    height: 50px;
+    background-color: #56545b;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.progressBar-number {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btninput-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    position: relative;
+
+}
+
+.btninput-box>input {
+    width: 100%;
+    height: 30px;
+    background-color: #56545b;
+    border-radius: 5px;
+    text-align: left;
+    padding: 0 0 0 10px;
+    color: #fff;
+}
+
+.btninput-box>button {
+    width: 70px;
+    height: 30px;
+    background-color: #56545b;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    border: none;
+    margin: 0;
+}
+
+.baybtn {
+    width: 120px;
+    height: 30px;
+    background-color: #5e68ff;
+}
+
+.receivebtn {
+    width: 120px;
+    height: 30px;
+    background-color: #1a6664;
+}
