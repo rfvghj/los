@@ -21,7 +21,7 @@
     <main>
       <div class="progressBar w1200">
         <div class="info w700">
-          <h2>预售结束</h2>
+          <h2>预售开始</h2>
           <div class="timeBox">
             <div id="day"></div>
             <div id="hour"></div>
@@ -80,7 +80,7 @@
     var inputNum = 0;
     window.onload = async function (){
 
-      var currentProvider = new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
+      var currentProvider = new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org');
    // https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
    //https://bsc-dataseed1.binance.org
     let web3Provider = new ethers.providers.Web3Provider(currentProvider);
@@ -537,7 +537,7 @@
 		"type": "function"
 	}
 ]
-    let contract = new ethers.Contract("0x7cc3e74a5631769918A71e0a3F6Fdfcc0F8b1C32", idoAbi, web3Provider);
+    let contract = new ethers.Contract("0xFcB9b6B263f94D6dbeb571F0277d95963b604b8C", idoAbi, web3Provider);
      var list = await contract.getInfo();
     
      $("#jqmeter-container").jQMeter({
@@ -623,16 +623,9 @@
         await idoHandle(inputNum);
       }else{
         Dreamer.error("请输入数量",2000);
+        return;
       }
-     
-    }
-
-    async function claimHandles(){
-      await claimHandle();
-    }
-    async function initWallets(str){
-   var adr = await  initWallet(str);
-   var currentProvider = new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
+      var currentProvider = new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org');
    // https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
    //https://bsc-dataseed1.binance.org
     let web3Provider = new ethers.providers.Web3Provider(currentProvider);
@@ -1089,7 +1082,479 @@
 		"type": "function"
 	}
 ]
-    let contract = new ethers.Contract("0x7cc3e74a5631769918A71e0a3F6Fdfcc0F8b1C32", idoAbi, web3Provider);
+    let contract = new ethers.Contract("0xFcB9b6B263f94D6dbeb571F0277d95963b604b8C", idoAbi, web3Provider);
+    var userAmount = await contract.BuytokenBalanceOf(privateAddress);
+        $("#userIdoAmount")[0].innerHTML = userAmount.toString();
+    var bools = await contract.isList(privateAddress);
+    if(bools){
+      $("#userIdoWhite")[0].innerHTML = "是";
+    }  
+     
+    }
+
+    async function claimHandles(){
+      await claimHandle();
+    }
+    async function initWallets(str){
+   var adr = await  initWallet(str);
+   var currentProvider = new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org');
+   // https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
+   //https://bsc-dataseed1.binance.org
+    let web3Provider = new ethers.providers.Web3Provider(currentProvider);
+    var idoAbi=[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "BuytokenBalanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "buyBool",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "claim",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "claimBool",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "decimalsa",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "dev_address",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "getAmountBNB",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBNB",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getInfo",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "idoBnb",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "isLimitBools",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isList",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "isOpenWhiteList",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "maxBnb",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "maxBnbAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "maxUserAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "minBnb",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "minUserAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "perAmountToken",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "list",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "setBalance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "bools",
+				"type": "bool"
+			}
+		],
+		"name": "setBuy",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "bools",
+				"type": "bool"
+			}
+		],
+		"name": "setClaim",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "setClaimTotal",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "bools",
+				"type": "bool"
+			}
+		],
+		"name": "setIsLimitBools",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "bools",
+				"type": "bool"
+			}
+		],
+		"name": "setIsOpenWhiteList",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinAndMaxBnb",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinAndMaxToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_decimals",
+				"type": "uint256"
+			}
+		],
+		"name": "setToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "adrs",
+				"type": "address[]"
+			}
+		],
+		"name": "setWhiteLsit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "tokenBalanceBool",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "token_address",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "userAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+    let contract = new ethers.Contract("0xFcB9b6B263f94D6dbeb571F0277d95963b604b8C", idoAbi, web3Provider);
     var userAmount = await contract.BuytokenBalanceOf(adr);
         $("#userIdoAmount")[0].innerHTML = userAmount.toString();
     var bools = await contract.isList(adr);

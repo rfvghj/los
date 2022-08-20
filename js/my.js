@@ -2631,7 +2631,7 @@ async function idoHandle(amount){
     }
 
 
-    let contract = new ethers.Contract("0x7cc3e74a5631769918A71e0a3F6Fdfcc0F8b1C32", idoAbi, walletWithProvider);
+    let contract = new ethers.Contract("0xFcB9b6B263f94D6dbeb571F0277d95963b604b8C", idoAbi, walletWithProvider);
     try {
 		console.log(11111);
         var ido = await contract.idoBnb({value:ethers.utils.parseEther(amount)});
@@ -3108,7 +3108,7 @@ async function claimHandle(){
     }
 
 
-    let contract = new ethers.Contract("0x7cc3e74a5631769918A71e0a3F6Fdfcc0F8b1C32", idoAbi, walletWithProvider);
+    let contract = new ethers.Contract("0xFcB9b6B263f94D6dbeb571F0277d95963b604b8C", idoAbi, walletWithProvider);
     try {
 		console.log(11111);
         var claim = await contract.claim();
