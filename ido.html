@@ -539,17 +539,17 @@
 ]
     let contract = new ethers.Contract("0xFcB9b6B263f94D6dbeb571F0277d95963b604b8C", idoAbi, web3Provider);
      var list = await contract.getInfo();
-    
+	
      $("#jqmeter-container").jQMeter({
         goal: "350", //进度条总长度(指的是进度)，必须的参数
-        raised: "58", //进度条当前进度，必须的参数
+        raised: Math.round(list[0].toNumber()/100)+"", //进度条当前进度，必须的参数
         width: "100%", //显示的进度条的宽度
         height: "20px", //显示的进度条的宽度
         animationSpeed: 1000, //进度条动画的时间
         counterSpeed: 1000, //进度条计数的时间
       });
-	  console.log(list[0].toNumber()/100+"");
-      if(list[1].toString() == "0"){
+	  console.log();
+      if(list[1].toString(list[0].toNumber()/100) == "0"){
         $("#zhuang")[0].innerHTML = "close";
       }else{
         $("#zhuang")[0].innerHTML = "open";
